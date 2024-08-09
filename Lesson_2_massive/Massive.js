@@ -10,33 +10,33 @@
 // console.log(array[8]);
 // console.log(array[9]);
 
-let book = {
-    title: 'main',
-    pageCount: 3,
-    genre: 'scary',
-    authors: [],
-}
-let book1 = {
-    title: 'main',
-    pageCount: 3,
-    genre: 'comedy',
-    authors: [],
-}
-let book2 = {
-    title: 'main',
-    pageCount: 3,
-    genre: 'adventure',
-    authors: [],
-}
-book.authors.name = 'King';
-book1.authors.name = 'Hitch';
-book2.authors.name = 'Caroll';
-
-book.authors.age = 75;
-book1.authors.age = 56;
-book2.authors.age = 45;
-// я вивів таким чином name та age.Цікаво чи це правильно?
-console.log(book,book1,book2);
+// let book = {
+//     title: 'main',
+//     pageCount: 3,
+//     genre: 'scary',
+//     authors: [],
+// }
+// let book1 = {
+//     title: 'main',
+//     pageCount: 3,
+//     genre: 'comedy',
+//     authors: [],
+// }
+// let book2 = {
+//     title: 'main',
+//     pageCount: 3,
+//     genre: 'adventure',
+//     authors: [],
+// }
+// book.authors.name = 'King';
+// book1.authors.name = 'Hitch';
+// book2.authors.name = 'Caroll';
+//
+// book.authors.age = 75;
+// book1.authors.age = 56;
+// book2.authors.age = 45;
+// // я вивів таким чином name та age.Цікаво чи це правильно?
+// console.log(book,book1,book2);
 
 // let users = [
 //     {name:'Samsom',username:'Som',password:123},
@@ -73,13 +73,13 @@ console.log(book,book1,book2);
 // ]
 // console.log(weather);
 
-// let x;
+// let x = 5;
 // if (x !== 0) {
 //     console.log('good')
 //
 // }else{
 //     console.log('bad');
-// }
+//  }
 // let x = 1;
 // if (x === 0) {
 //     console.log('good')
@@ -186,6 +186,8 @@ console.log(book,book1,book2);
 // if (coursesAndDurationArray[5].monthDuration > 5){
 //     console.log('super');
 // }
+
+// Останнє завдання копі паста
 
 
 
