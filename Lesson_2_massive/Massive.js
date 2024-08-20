@@ -94,7 +94,7 @@
 //     console.log('worst')
 // }
 
-// let time = 32;
+// let time = 10;
 // if(time>= 0 && time <=15) {
 //     console.log('First');
 // } else if (time>= 16 && time <= 30) {
@@ -115,6 +115,8 @@
 // else if (day>= 21 && day <=31){
 //     console.log('Decadathird');
 // }
+
+
 
 // let schedule = 'wednesday'
 // switch (schedule) {
@@ -148,7 +150,7 @@
 //  else if(a === b){
 //     console.log('the same');
 // }
-
+//
 // let  x = 2;
 // x = 0 || 'default'
 // console.log(x)
@@ -188,7 +190,6 @@
 // }
 
 // Останнє завдання копі паста
-
 
 
 
