@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // //lesson 6 arrays function/String function/callback
+
+
+    // let arr =[];//How to check is it massive?
+    // console.log(Array.isArray(arr));
+    // arr.push('wdewdq'); //add some to massive at the end
+    // let number1 = arr.push('dqdqd');
+    // console.log(number1);
+    //
+    // let number = arr.push('dqdqd'); //cntrl + alt + V Create variable with data about inside/
+    // console.log(arr);
+    // console.log(number); //show number when I pushed this
+    //
+    // arr.pop(); // delete last object from massive
+    // console.log(arr);
+    //
+    // arr.unshift('room'); // add some at the begining/ new length
+    // console.log(arr);
+    //
+    // arr.shift(); //delete object from begin
+    // console.log(arr);
+    //
+    // let s = arr.join(); // use to join objects/in brackets you can change use separator some add between objects
+    // console.log(s);
+    //
+    // let arr2 =[21,323,434,55];
+    // let concat = arr.concat(arr2); // concat use connect two massive
+    // console.log(concat);
+    // concat.reverse(); // change places massive or objects
+    // console.log(concat);
+
+   //check all these
+    // console.log(str.toUpperCase());
+    // console.log(str.toLowerCase());
+    // console.log(str.startsWith('hel'));
+    // console.log(str.endsWith('en'));
+    // console.log(str.substring(0, 7));
+    // console.log(str.indexOf('o'));
+    // console.log(str.lastIndexOf('o'));
+    // console.log(str.indexOf('o', 5));
+    // console.log(str.charAt(8));
+    // // console.log(str.replace('e', '!'));
+    // console.log(str.replaceAll('e', '!'));
+    // let split = str.split(' ');
+    // console.log(split);
+
+    // Приклад з різними виводами колл бек
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
+    // ітерація массиву за допомогою різних прикладів функцій та коллбеків
+    // for (const user of users) {
+    //     (function (value) {
+    //         console.log(value);
+    //     } (user))
+    // }
+
+
+
+    // те саме тільки надали змінну
+    // let newVar = function (value){
+    //     console.log(value);
+    // };
+    // for (const user of users){
+    // newVar(user)
+    //
+    // }
+// те саме за допомогою forEach в середині forEach проходити ітерація for
+//     users.forEach(function(value){
+//         console.log(value)
+//     });
+
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
+
+    // users.forEach(value => console.log(value));
+    // users.forEach(function (value) {
+    //     console.log(value);
+    // });
+
+
+
+    // Filter  повертає булеве значення
+
+    // let resultFilter = users.filter(function (user) {
+    //     return user.status;// не потрібно порівнювати чи дорівнює статус true функція про це знає и повертає статус тру юїерів
+    //     // Замість статус можна підставити будь-які перевірки наприклад user.age > 30 виведе
+    // }); // що б отримати юзерів зі статусом false в return перед user поставити '!'
+    // console.log(resultFilter);
+
+    // метод стрілочних функцій
+    // let resultFilter = users.filter((user) => user.age > 30); // якщо одна дія можна ставити так в рядок
+    // console.log(resultFilter);
+
+    // let coursesAndDurationArray = [
+    //     {title: 'JavaScript Complex', monthDuration: 5},
+    //     {title: 'Java Complex', monthDuration: 6},
+    //     {title: 'Python Complex', monthDuration: 6},
+    //     {title: 'QA Complex', monthDuration: 4},
+    //     {title: 'FullStack', monthDuration: 7},
+    //     {title: 'Frontend', monthDuration: 4}
+    // ];
+
+
+// фільтрація за monthDuration методом стрілочної
+//     let resultMonthFilter = coursesAndDurationArray.filter((month) => month.monthDuration > 5);
+//     console.log(resultMonthFilter);
+// -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration} map створює новий массив зі змінами який я вніс
+    //функцією map можна додавати значення нові в массив для чогось Приклад user.id = число таким чином додається нове значення після return user;
+    // let mapNewResult = coursesAndDurationArray.map((value,index)=>{
+    //     let newField ={  // таким чином ми стоврюємо новий едемент або обьєкт залишаючи оригінальний массив не змінним
+    //         id: index +1,
+    //         title:value.title,
+    //         monthDuration: value.monthDuration
+    //     }
+    //     return newField;
+    // });
+    // console.log(mapNewResult);
+    // console.log(coursesAndDurationArray);
+
+    // let mapNewResult = coursesAndDurationArray.map((value,index)=>{
+    //     value.id = index +1; // таким чином ми мутуємо рідний массив
+    //     return value;
+    // });
+    // console.log(mapNewResult);
+
+    // Приклад з if else
+
+    // let iceCream = "Milk";
+    // if (iceCream === "chocolate") {
+    //     console.log("Yay, I love chocolate ice cream!");
+    // } else {
+    //     console.log("Awwww, but chocolate is my favorite…");
+    // }
+
+
+//     let arr =[];
+//     arr.push('tetueru');// push додати до кінця масиву
+//     arr.push('fffff');
+//     arr.push('vvvv');
+//    let pop = arr.pop();// видалити останній обьєкт
+//    console.log(pop);
+//     console.log(arr);
+//     arr.unshift('dejwdw'); // додати на початок масиву new length
+//     console.log(arr);
+//     arr.shift();  // видалити з початку масиву перший
+//     console.log(arr);
+// // первинні обьєкти залишаються не змінними массиви змінні concat створює новий обьект абсолютно змінений
+//     let arr2 = [323,33,4353,];
+//     arr.concat(arr2); //додає один массив до іншого
+//     let concat = arr.concat(arr2)//додає один массив до іншого додавання до існуючого міссиву
+//     console.log(concat)
+//     concat.reverse(); //міняє місцями обʼєкти в міссиві с аду наперед треба задавати нову змінну або використовувати toSorted  що б не змінити початковий елемент
+//     console.log(concat);
+//
+//     let arr3 = [242,4242,424,44,424,1122,332,424];
+//     console.log(arr3.slice(2,5)); //вирізає обʼєкт приклад з 2 го по 5 включо
+//     console.log(arr3);
+//      arr3.splice(); // splice видаляє обʼєкти можна виставляти з якого по який
+//     console.log(arr3);
+//     console.log(arr3.indexOf(44)); // показує під яким індексом знаходиться обьʼєкт тут приклад 44 це обьект масиву
+//     console.log(arr3.includes(1122)); //includes  повертає булеве значення в даному випалку true бо це значення є в массиві
+//
+
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+    //   users.forEach(function (value){       // функція forEach має під капотом ітерацію що бвона спрацювала треба викликати callbackFn функцію
+    //          console.log(value);                           // в дужках тобто визначити що ми хочемо профтерувати або кого в даному випадку юхерів назва довільна
+    // });
+
+    // for (const user of users) {            //те саме тільки звичайною ітерацією
+    //     (function (value){         // в дужках задаємо якийсь аргумент який під час виклику цієї функції знизу в скобках ми зможемо її заповнити юзером
+    //         console.log(value)
+    //     }(user));    // виводимо усіх юзерів.кожен юзер передається в функцію та їх виводить.В циклі викликаєтсья функція
+    // }
+
+    // let newVar = function (value){    // те саме тільки винесли в змінну
+    //     console.log(value);
+    // };
+    // for (const user of users) {
+    //     newVar(user);
+    //
+    // }
+
+   // let resultFilterArray= users.filter(function(user){ // фуенкція фильтр фільтрує наш массив в середину також приймає коллбек функцію в дужках ми зазначаємо аргумент назву довільну кого що ми фільтруємо
+   //           // return user.status;              //функція коллбек приймає до 3 аргументів.Перший це оббект який ми фільтруємо
+   //           return user.age > 30;
+   //  });                                      // filter повертає булеве значення
+   // console.log(resultFilterArray)            // В прикладі фільтруємо за статусом тру та фолс.якщо тру воно виведе юхерів з тру,якщо поставити знак заперечення ! то виведе фолс
+
+//Та же функція тільки перероблена в стрілочну фунцію.Якщо у нас одна дія можна навіть поставити в рядок
+//     let resultFilterArray = users.filter((user)=> user.age > 30);
+//         console.log(resultFilterArray);
+
+
+// функція map Важливо!Вона створює ассоціацію і також приймає колл бек функцію
+//map створює новий массив
+// map,filter,sort та інші функції приймають 3 аргументи.перший обьєкт ітеруємий другий index
+//   let mapResultArray = users.map(user => user.age); //user.age це приклад того що ми хочемо витягти з масисву и він повертає новий массив з тим що ми вивводимо
+//   console.log(mapResultArray); // ми отримаємо фбсолютно новий массив
+
+    // let mapResultArray = users.map((user,index)=>{
+    //
+    //     let obj = {    // що б не мутувати рідний обʼєкт потрібно робити так
+    //         name: user.name,
+    //         age: user.age,
+    //         status: user.status,   // це правило пробити треба так що б не пошкодити ріднй  массив
+    //         id: index + 2
+    //     }
+    //    return obj;
+    // });
+    // console.log(users); //рідний массив залишається без змін
+    // console.log(mapResultArray); новий массив зі змінами
+
+// функція також має колл бек.Що б між собою щось сортувати треба це порівнювати тобто в дужки додати два обьекта
+   // Функція sort мутує наш массив,що б цього нетбуло треба використ.функцію toSorted
+   //  users.sort((user1,user2)=>{   //таким чином ми беремо по два юзера
+   //      return user1.age - user2.age; // сортувати потрібно щось що дає число в даному випадку ми сортуємо за спадданям age юзерів
+   //  });                               //Що б сортувати стрінгу використовуємо LocalCompare
+   //  console.log(users);
+
+    // let reduce = users.reduce((accumulator,user) => { // reduce вик.для фасування
+    //     if (user.status) {
+    //         accumulator[0].push(user); // сюди ідуть true
+    //     }else {
+    //         accumulator[1].push(user) // сюди false
+    //     }
+    //     return accumulator;  //accumulator - пустий массив в нашому випадку
+    // }, [[],[]]); // створено два массиви для тру та фолс юзерів.Це може бути також стрінга, обʼєкт,те що ми хочемо отримати в даному випадку массив
+    // console.log(reduce); // наш масив юзерів не мутує в цьому випадку бо ми створили [] [] два массиви в які поклали наших юзерів за статусом
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //приклад з includes
+//     const browserType = "mozilla";
+//
+//     if (browserType.includes("zilla")) {
+//         console.log("Found zilla!");
+//     } else {
+//         console.log("No zilla here!");
+//     }
+//
+   //
+   //  const random = ["tree", 795, [0, 'tree', 2]];
+   // random.push('givi');
+   //  console.log(random);
+
+
+    //
+    // let coursesAndDurationArray = [
+    //     {title: 'JavaScript Complex', monthDuration: 5},
+    //     {title: 'Java Complex', monthDuration: 6},
+    //     {title: 'Python Complex', monthDuration: 6},
+    //     {title: 'QA Complex', monthDuration: 4},
+    //     {title: 'FullStack', monthDuration: 7},
+    //     {title: 'Frontend', monthDuration: 4}
+    // ];
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
