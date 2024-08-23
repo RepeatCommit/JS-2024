@@ -34,7 +34,7 @@
     // console.log(s);
     //
     // let arr2 =[21,323,434,55];
-    // let concat = arr.concat(arr2); // concat use connect two massive
+    // let concat = arr.concat(arr2); // concat use connect two massive два обьʼєкти дві стрінги тощо
     // console.log(concat);
     // concat.reverse(); // change places massive or objects
     // console.log(concat);
@@ -54,21 +54,21 @@
     // let split = str.split(' ');
     // console.log(split);
 
-    // Приклад з різними виводами колл бек
-    // let users = [
-    //     {name: 'vasya', age: 31, status: false},
-    //     {name: 'petya', age: 30, status: true},
-    //     {name: 'kolya', age: 29, status: true},
-    //     {name: 'olya', age: 28, status: false},
-    //     {name: 'max', age: 30, status: true},
-    //     {name: 'anya', age: 31, status: false},
-    //     {name: 'oleg', age: 28, status: false},
-    //     {name: 'andrey', age: 29, status: true},
-    //     {name: 'masha', age: 30, status: true},
-    //     {name: 'olya', age: 31, status: false},
-    //     {name: 'max', age: 31, status: true}
-    // ];
-    // ітерація массиву за допомогою різних прикладів функцій та коллбеків
+   // Приклад з різними виводами колл бек
+   //  let users = [
+   //      {name: 'vasya', age: 31, status: false},
+   //      {name: 'petya', age: 30, status: true},
+   //      {name: 'kolya', age: 29, status: true},
+   //      {name: 'olya', age: 28, status: false},
+   //      {name: 'max', age: 30, status: true},
+   //      {name: 'anya', age: 31, status: false},
+   //      {name: 'oleg', age: 28, status: false},
+   //      {name: 'andrey', age: 29, status: true},
+   //      {name: 'masha', age: 30, status: true},
+   //      {name: 'olya', age: 31, status: false},
+   //      {name: 'max', age: 31, status: true}
+   //  ];
+    //ітерація массиву за допомогою різних прикладів функцій та коллбеків
     // for (const user of users) {
     //     (function (value) {
     //         console.log(value);
@@ -81,7 +81,7 @@
     // let newVar = function (value){
     //     console.log(value);
     // };
-    // for (const user of users){
+    // for (const user of users){     // вциклі викликаємо функцію
     // newVar(user)
     //
     // }
@@ -113,7 +113,7 @@
 
     // Filter  повертає булеве значення
 
-    // let resultFilter = users.filter(function (user) {
+    // let resultFilter = users.filter(function (user) {   // в сереині також коллбек function
     //     return user.status;// не потрібно порівнювати чи дорівнює статус true функція про це знає и повертає статус тру юїерів
     //     // Замість статус можна підставити будь-які перевірки наприклад user.age > 30 виведе
     // }); // що б отримати юзерів зі статусом false в return перед user поставити '!'
@@ -194,19 +194,19 @@
 //
 
 
-    let users = [
-        {name: 'vasya', age: 31, status: false},
-        {name: 'petya', age: 30, status: true},
-        {name: 'kolya', age: 29, status: true},
-        {name: 'olya', age: 28, status: false},
-        {name: 'max', age: 30, status: true},
-        {name: 'anya', age: 31, status: false},
-        {name: 'oleg', age: 28, status: false},
-        {name: 'andrey', age: 29, status: true},
-        {name: 'masha', age: 30, status: true},
-        {name: 'olya', age: 31, status: false},
-        {name: 'max', age: 31, status: true}
-    ];
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
 
     //   users.forEach(function (value){       // функція forEach має під капотом ітерацію що бвона спрацювала треба викликати callbackFn функцію
     //          console.log(value);                           // в дужках тобто визначити що ми хочемо профтерувати або кого в даному випадку юхерів назва довільна
@@ -274,19 +274,75 @@
     // console.log(reduce); // наш масив юзерів не мутує в цьому випадку бо ми створили [] [] два массиви в які поклали наших юзерів за статусом
 
 
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
 
+    // users.forEach(function (user){ //виводимо усіх юзерів за дпопомогою функціх forEach та функції коллбек
+    //     console.log(user);  //якщо ми хочемо вивести щось то треба вказувати в аргументі це
+    // })
+//    let resultFilterArray = users.filter(function(user){ //функція filter яка також приймає коллбек filter має повертати булеве значення
+//    return user.age > 30; //для прикладу ми відфільтрували по age
+//    })
+// console.log(resultFilterArray);
 
+    // let resultFilterArray = users.filter(user => user.age >30); //те саме тільки стрілочною
+    // console.log(resultFilterArray);
 
+    //map подібна filter forEach,але в результаті вона повертає абсолютно новий массив.Ці функції приймають 3 аргументи перший це обьект ітеруємий другий index
+    // let mapResultArray = users.map(user => user.age); //<--- в цьому поикладі ми повертаємо усі значення age в новому массиві.В дужках ми проганяємо кожного юзера в массиві і виводимо тільки цифри age
+    // console.log(mapResultArray);
+//
+//     let mapResultArray = users.map(user => {  // так дордаємо поле в массив
+//         user.id = 222;
+//         return user;
+//     });
+//     console.log(mapResultArray);
 
+    // let mapResultArray = users.map((user,index) => {  // додали другий аргумент index
+    //     user.id = index +1; //таким чином ми задали уніккальний id для кожного юзера/ index +1 це починаючи з 1 го
+    //     return user;
+    // });
+    // console.log(mapResultArray);
+    // console.log(users); //при виведені рідного массиву виявились зміни бо map мутує рідний обьєкт и робить новий
 
+    // що б обʼєкт не мутував треба створити його
+    // let mapResultArray = users.map((user,index) => {
+    //    let obj ={ // створюємо абсолютно новий массив-обьект і вказуємо значення рідного массиву можна одразу зі змінами та додктковими полями і ми отримаємо новий массив-обьектю
+    //        id: index +1,
+    //        name: user.name,
+    //        age: user.age,
+    //        status: user.status,
+    //    }
+    //
+    //     return obj; // отримаємо новий мутований массив рідний залищаєтсья без змін Це правило на майбутнє робити тільки так що не пошкодити рідний массив
+    // });
+    // console.log(mapResultArray);
+    // console.log(users);
 
+// метод spread розмазує обьʼєкт і створю копію
+//     let mapResultArray = users.map((user,index) =>{
+//         return {...user, id: index +1};// створюємо змінену копію массиву users методом spread (...Users ,беремо усі характеристики з Users name age status.Клонування внутрянки обьектів юер
+//     });
+//     console.log(mapResultArray);
+//     console.log(users);
 
-
-
-
-
-
-
+    //сортування за допомогою функції sort rтакож приймає колл бек функцію.Що щось сортувати треба це порівнювати, наприклад один обьект з іншим
+     //Що б відсортувати щось когось треба буквально віднімати один обьект від іншого, функція sort в кінці має отримати числове значення
+//     users.sort((user1,user2) =>{
+//        return user1.age - user2.age; // сортувати треба по числовим значенням тому ми взяли age для прикладу.В цьому прикладі сортуванням age йде від меншого до більшого
+//      }); // якщо сортувати в зворотньому напрямку то поміняти місцями user2 - user1
+// console.log(users);
 
 
 
@@ -305,15 +361,7 @@
    //  console.log(random);
 
 
-    //
-    // let coursesAndDurationArray = [
-    //     {title: 'JavaScript Complex', monthDuration: 5},
-    //     {title: 'Java Complex', monthDuration: 6},
-    //     {title: 'Python Complex', monthDuration: 6},
-    //     {title: 'QA Complex', monthDuration: 4},
-    //     {title: 'FullStack', monthDuration: 7},
-    //     {title: 'Frontend', monthDuration: 4}
-    // ];
+
 
 
 
