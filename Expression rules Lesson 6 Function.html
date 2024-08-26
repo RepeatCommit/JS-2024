@@ -54,7 +54,7 @@
     // let split = str.split(' ');
     // console.log(split);
 
-   // Приклад з різними виводами колл бек
+   //Приклад з різними виводами колл бек
    //  let users = [
    //      {name: 'vasya', age: 31, status: false},
    //      {name: 'petya', age: 30, status: true},
@@ -68,12 +68,13 @@
    //      {name: 'olya', age: 31, status: false},
    //      {name: 'max', age: 31, status: true}
    //  ];
-    //ітерація массиву за допомогою різних прикладів функцій та коллбеків
-    // for (const user of users) {
-    //     (function (value) {
-    //         console.log(value);
-    //     } (user))
-    // }
+   //  //ітерація массиву за допомогою різних прикладів функцій та коллбеків
+   //  for (const user of users) {
+   //      (function (value) {
+   //          console.log(value);
+   //      } (user))
+   //  }
+
 
 
 
@@ -85,10 +86,10 @@
     // newVar(user)
     //
     // }
-// те саме за допомогою forEach в середині forEach проходити ітерація for
-//     users.forEach(function(value){
-//         console.log(value)
-//     });
+//те саме за допомогою forEach в середині forEach проходити ітерація for
+//     users.forEach(value => console.log(value)); //стрфлочна функція
+
+
 
     // let users = [
     //     {name: 'vasya', age: 31, status: false},
@@ -103,11 +104,25 @@
     //     {name: 'olya', age: 31, status: false},
     //     {name: 'max', age: 31, status: true}
     // ];
+    // let sortUser =  users.sort((user1,user2)=> user1.age - user2.age)
+    // console.log(sortUser)
 
-    // users.forEach(value => console.log(value));
-    // users.forEach(function (value) {
-    //     console.log(value);
+
+
+
+
+
+
+
+
+
+
+    // users.forEach(user => console.log(user))
+    // users.forEach(function (user) {
+    //     console.log(user);
     // });
+
+
 
 
 
@@ -115,10 +130,11 @@
 
     // let resultFilter = users.filter(function (user) {   // в сереині також коллбек function
     //     return user.status;// не потрібно порівнювати чи дорівнює статус true функція про це знає и повертає статус тру юїерів
-    //     // Замість статус можна підставити будь-які перевірки наприклад user.age > 30 виведе
+        // Замість статус можна підставити будь-які перевірки наприклад user.age > 30 виведе
     // }); // що б отримати юзерів зі статусом false в return перед user поставити '!'
     // console.log(resultFilter);
-
+    // let resultFilter = users.filter(user => user.status) стрілочною
+    // console.log(resultFilter);
     // метод стрілочних функцій
     // let resultFilter = users.filter((user) => user.age > 30); // якщо одна дія можна ставити так в рядок
     // console.log(resultFilter);
@@ -134,7 +150,7 @@
 
 
 // фільтрація за monthDuration методом стрілочної
-//     let resultMonthFilter = coursesAndDurationArray.filter((month) => month.monthDuration > 5);
+//     let resultMonthFilter = coursesAndDurationArray.filter(month => month.monthDuration > 5);
 //     console.log(resultMonthFilter);
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration} map створює новий массив зі змінами який я вніс
     //функцією map можна додавати значення нові в массив для чогось Приклад user.id = число таким чином додається нове значення після return user;
@@ -148,6 +164,35 @@
     // });
     // console.log(mapNewResult);
     // console.log(coursesAndDurationArray);
+
+    // let mapNewResult = coursesAndDurationArray.map((value,genre)=> {
+    //     let newField = {
+    //         genre: 'scary',
+    //         title:value.title,
+    //         monthDuration:value.monthDuration
+    //
+    //     }
+    //     return newField
+    // });
+    //
+    // console.log(mapNewResult);
+    // console.log(coursesAndDurationArray);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // let mapNewResult = coursesAndDurationArray.map((value,index)=>{
     //     value.id = index +1; // таким чином ми мутуємо рідний массив
@@ -194,19 +239,19 @@
 //
 
 
-    // let users = [
-    //     {name: 'vasya', age: 31, status: false},
-    //     {name: 'petya', age: 30, status: true},
-    //     {name: 'kolya', age: 29, status: true},
-    //     {name: 'olya', age: 28, status: false},
-    //     {name: 'max', age: 30, status: true},
-    //     {name: 'anya', age: 31, status: false},
-    //     {name: 'oleg', age: 28, status: false},
-    //     {name: 'andrey', age: 29, status: true},
-    //     {name: 'masha', age: 30, status: true},
-    //     {name: 'olya', age: 31, status: false},
-    //     {name: 'max', age: 31, status: true}
-    // ];
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
 
     //   users.forEach(function (value){       // функція forEach має під капотом ітерацію що бвона спрацювала треба викликати callbackFn функцію
     //          console.log(value);                           // в дужках тобто визначити що ми хочемо профтерувати або кого в даному випадку юхерів назва довільна
@@ -232,10 +277,8 @@
    //  });                                      // filter повертає булеве значення
    // console.log(resultFilterArray)            // В прикладі фільтруємо за статусом тру та фолс.якщо тру воно виведе юхерів з тру,якщо поставити знак заперечення ! то виведе фолс
 
-//Та же функція тільки перероблена в стрілочну фунцію.Якщо у нас одна дія можна навіть поставити в рядок
-//     let resultFilterArray = users.filter((user)=> user.age > 30);
-//         console.log(resultFilterArray);
-
+    // let resultFilterArray= users.filter(user =>user.age > 30);
+    // console.log(resultFilterArray);  //стрілочна
 
 // функція map Важливо!Вона створює ассоціацію і також приймає колл бек функцію
 //map створює новий массив
@@ -274,19 +317,19 @@
     // console.log(reduce); // наш масив юзерів не мутує в цьому випадку бо ми створили [] [] два массиви в які поклали наших юзерів за статусом
 
 
-    let users = [
-        {name: 'vasya', age: 31, status: false},
-        {name: 'petya', age: 30, status: true},
-        {name: 'kolya', age: 29, status: true},
-        {name: 'olya', age: 28, status: false},
-        {name: 'max', age: 30, status: true},
-        {name: 'anya', age: 31, status: false},
-        {name: 'oleg', age: 28, status: false},
-        {name: 'andrey', age: 29, status: true},
-        {name: 'masha', age: 30, status: true},
-        {name: 'olya', age: 31, status: false},
-        {name: 'max', age: 31, status: true}
-    ];
+    // let users = [
+    //     {name: 'vasya', age: 31, status: false},
+    //     {name: 'petya', age: 30, status: true},
+    //     {name: 'kolya', age: 29, status: true},
+    //     {name: 'olya', age: 28, status: false},
+    //     {name: 'max', age: 30, status: true},
+    //     {name: 'anya', age: 31, status: false},
+    //     {name: 'oleg', age: 28, status: false},
+    //     {name: 'andrey', age: 29, status: true},
+    //     {name: 'masha', age: 30, status: true},
+    //     {name: 'olya', age: 31, status: false},
+    //     {name: 'max', age: 31, status: true}
+    // ];
 
     // users.forEach(function (user){ //виводимо усіх юзерів за дпопомогою функціх forEach та функції коллбек
     //     console.log(user);  //якщо ми хочемо вивести щось то треба вказувати в аргументі це
@@ -361,8 +404,33 @@
    //  console.log(random);
 
 
+//додавання обьексу в массив
 
-
+    // function Cinderella(name,age,sizeFeet){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sizeFeet = sizeFeet;
+    // }
+    //
+    // let Cinderellas = [
+    //     new Cinderella('Sonya',15,28),
+    //     new Cinderella('Katya',14,27),
+    //     new Cinderella('Lena',16,26),
+    //     new Cinderella('Valya',17,30),
+    //     new Cinderella('Jenya',16,27),
+    //     new Cinderella('Elvira',19,31),
+    //     new Cinderella('Xena',14,27),
+    //     new Cinderella('Anna',19,29),
+    //     new Cinderella('Nina',13,25),
+    //     new Cinderella('Sara',17,28),
+    // ];
+    //
+    // function addObjectToCinderella(obj){
+    //     Cinderellas.push(obj)
+    // }
+    //
+    // addObjectToCinderella({name:'Klara',age:35,sizeFeet:38});
+    // console.log(Cinderellas);
 
 
 
