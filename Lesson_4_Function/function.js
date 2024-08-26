@@ -29,6 +29,15 @@
 //     document.write(`<p>${text}</p>`)
 // }
 // someInDocument('Give me more');
+
+// const some =(msg)=> document.write(`<p>${msg}</p>`) //метод стрілочної функції
+// some('Bye bye');
+
+// let some =(text)=> console.log(`<h1>${text}</h1>`)
+//     some('kola');
+
+
+
 //- створити функцію яка створює ul з трьома елементами li та виводить його через document.write. Текст li задати через аргумент всім однаковий
 // function kurse(some){
 //     document.write(`
@@ -41,6 +50,24 @@
 // }
 // kurse(`Who is this`)
 
+// function course(some){
+//     document.write(`
+//     <div>
+//     <h1>
+//     ${some}
+// </h1>
+// </div>`)
+// }
+// course('Who is this?');
+
+// function course(age,id){
+//     document.write(`${age},${id}`)
+// }
+//
+// course(43,21);
+
+
+
 // function createLi(text,item){
 //     document.write('<ul>')
 //     for (let i = 0; i < item; i++) {
@@ -48,7 +75,22 @@
 //     }
 //      document.write('</ul>');
 // }
-// createLi('go for it',10)
+// createLi('go for it',5)
+
+
+// let users =[];
+//
+// function createUsers(name,username,id,item){
+//     for (const user of item) {
+//               return user;
+//           }
+//
+// }
+//
+//  console.log( createUsers('gus','kosha',65,10));
+
+
+
 
 // function bar (arrayValuables){
 //     document.write(`<ul>`)
@@ -241,10 +283,101 @@
 
 
 
+//Приклад функції з перевіркою if
+
+// function square(sideA,sideB){  //в дужках ми описали аргументи сторін квадрату
+//     if (sideA > 0 && sideB > 0){ // тут ми задали перевірку
+//         return sideA * sideB; // якщо перевірку пройшла то повертає та виконує нашу дію
+//     }
+//     return 0;  //якщо перевірка не пройшла то повертає нуль
+// }
+//
+// let result = square(10,30); // в цьому випадку нам поверне 300 (sideA * sideB)
+// let result2 =square(-10,20) // в цьому випадку нам поверне 0 бо sideA<0
+// console.log(result);
+
+//функції які нічого не повертають без return бо ми виводимо
+
+// let arrA = [2,3,4]; //створили 3 пустих масива
+// let arrB = [1,2,4];
+// let arrC = [7,5,3];
+
+// function arrayPrint(arr){ //створили фунцію для опису масивів в дужка задали аргуемент на створення массиву
+//     for (const arrElement of arr) { //сторили ітерацію
+//         console.log(arrElement); // виводить елемент массиву
+//     }
+// }
 
 
+// arrayPrint(arrA); // Що б проітерувати та вивести з массиву arrA
+// arrayPrint(arrB);
+// arrayPrint(arrC);
 
 
+//Функції які впливають на іншщий обьʼєкт
+// let  arr = []; // створили пустий массив
+// //функція тут нічого не повертає тому що вона впливає на зовнішній обьʼєкт тобто на нащш пустий массив
+// function addObjectToArray(obj){ // стоірили функцію задали аргумент obj та array массив в який ми додаємо obj
+//      arr.push(obj);
+// }
+//
+// addObjectToArray({id:2})
+// addObjectToArray({id:2,name:'Semen',age:34})
+// addObjectToArray({id:2,name:'Kolya',age:23})
+// addObjectToArray({id:2,surname:'Lena'})
+//
+// console.log(arr);
+
+
+//функція яка щось виводить в документ write
+// function printToDocument(msg){  //додали аргумент msg
+//     document.write(`<div>${msg}</div>`) //додали чреез інтерпуляцію msg що б задати для кожного div власний текст
+//
+// }
+// //ця функція нічого не повертає бо вона відпрацьовую в document write
+// printToDocument('hello');
+// printToDocument('agov');
+// printToDocument('hi');
+// printToDocument('bye');
+
+
+// const calculator = (a,b)=>{ //приклад стрілочної функціїї return в стрідлочній функції є за замовчуваням тобто можна усе поставити в один рядок без return  і дужок якщо тільки у нас одна дія
+//     return a + b;
+// }
+// console.log(calculator(10,20));
+
+
+// уявімо що в нас є обьʼєкт з характеристиками
+// let user = {
+//     id:3123,
+//     name: 'Sasha',
+//     greeting: function (msg) {//у обьʼєкта може бути якась характеристика тобто функція своя.Називати фукція потрвбно як дію що вона виконує ів даному випадку гриитинг це вітання
+//     console.log('Hello motherfucker',msg, this.name); // this в даному випадку це наш user Sasha
+//     },
+//     greeting1 (msg) {
+//         console.log('Hello2',msg,this.name)  //другий спосіб,додали аргуммент msg це наш user Sasha
+// },
+//     greeting2: (msg)=> {
+//         console.log('Bye',msg)    // третій спосіб стрлочної,додали аргуммент msg this для стрілочної функції краще не використовувати бо це глобальний оббєкт
+//     }
+// }
+// //виводимо кожну функцію greeeting
+// user.greeting('bitch');
+// user.greeting1('buddy');
+// user.greeting2('men');
+
+// попрдження двух обьʼєктів
+// function userBuilder(id,name){
+//     return {
+//         id: id,  //можна спростити до просто id name
+//         name: name,
+//     }
+// }
+//
+// let user1 = userBuilder(1,'koko');
+// let user2 = userBuilder(2,'abra');
+// console.log(user1);
+// console.log(user2);
 
 
 
