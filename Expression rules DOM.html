@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<!--<p>Hello</p>-->
+<!--<ul class="menu" id="list1">-->
+<!--  <li>item 1</li>-->
+<!--  <li>item 1</li>-->
+<!--  <li>item 1</li>-->
+<!--  <li>item 1</li>-->
+<!--  <li>item 1</li>-->
+<!--  <li>item 1</li>-->
+<!--</ul>-->
+
+<!--<ul class="menu" id="list2">-->
+<!--  <li>item 2</li>-->
+<!--  <li>item 2</li>-->
+<!--  <li>item 2</li>-->
+<!--  <li>item 2</li>-->
+<!--  <li>item 2</li>-->
+<!--  <li>item 2</li>-->
+<!--</ul>-->
+
+
+<!--створили довільний div з текстом.Цей приклад відноситься до теми маніпуляція елементами-->
+<!--<div id="some" xxx="atribute">-->
+<!--  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, quisquam?-->
+<!--</div>-->
+
+<!--<div class="users"></div>-->
+<!--створили блок з классом -->
+
+
+
+<script>
+
+
+
+  // console.log(document.body.innerHTML);// показує що знаходиться в body,innerhtml показує текст весь
+  // пошук по id class tag.....
+
+  // ID
+  //якщо блоки мають два однакових id то getElementById виведе тільки перший
+ // let ul1 = document.getElementById('list1'); // можна скоротити пошук визначивши наприклад document.body
+ // console.log(ul1);
+
+ // let menucollection = document.getElementsByClassName('menu'); // через getElementsByClassName ми отримуємо коллекцію,а що б отримати кожен елемент треба проітреувати або шукати по id і тільки так!
+ // // console.log(menucollection);
+ //  for (const menucollectionElement of menucollection) {
+ //    console.log(menucollection); // вивели усі li
+ //
+ //  }
+
+  //tag
+  // let ulList = document.getElementsByTagName('ul'); //пошук по тегу те саме видає коллекцію
+  // console.log(ulList);
+
+  // let liList = document.getElementsByTagName('li'); //пошук по li
+  // console.log(liList);
+//виводимо тільки ті li які знаходяться в list1
+
+  // let getid = document.getElementById('list1'); //list1 це тільки ul
+  // console.log(getid);
+  // let listcollection = getid.getElementsByTagName('li'); //призначаємо тег це я к внутрішнній пошук
+  // console.log(listcollection); //вивели усі li з list1
+
+  // маніпуляція елементами!!!
+
+  // let some = document.getElementById('some');
+  // console.log(some);//пошук по id
+  // console.log(some.innerText);// через innertext вивели наш lorem з some
+  // console.log(some.innerText = 'semen');// можна змінити значення.Ми замінили lorem на semen
+  // some.classList.add('boo'); //додали класс в наш div з id some
+  // some.classList.add('ra'); // додали ще один класс і вийшов class="boo ra"
+  // console.log(some.classList.item(0));//витягти певний класс за певним індексом 0 це boo 1 буде ra
+  // console.log(some.classList.contains('boo'))// перевірка чи існую той чи інший класс/повертає булеве значення
+  // some.classList.toggle('kaa');// у випадку якщо такий класс існує toggle його видаляє.Якщо додати в дужках класс якого не існувало toggle його навпаки додасть
+  // console.log(some.getAttribute('ccc'));// пошук по атрибуту.Виводить те що в середині атрибуту тобто atribute
+  // console.log(some.getAttribute('id'));// повертає some
+  // console.log(some.getAttribute('class'));// повертає назву классу boo ra kaa
+  // // some.setAttribute('id', 'noId'); //помінляи назву id було some тепер noId але тепер усі попередні маніпуляції по some не працюють
+  // console.log(some.children);//повертає те що в середині нашого some якби ми там щось зробили по типу span p div.....
+
+
+  // створення елементів
+
+ // let h1 = document.createElement('h1');// створюємо h1
+ // h1.innerText = 'leave me alone'; // так додадємо текст
+ //  document.body.appendChild(h1); // для того що б вивести щось треба додати до body
+
+  //  let usersDiv = document.getElementsByClassName('users')[0];// витягаємо по классу наш блок з классом users
+  //
+  // let users = [
+  //     {name: 'vasya', age: 31, status: false},
+  //     {name: 'petya', age: 30, status: true},
+  //     {name: 'kolya', age: 29, status: true},
+  //     {name: 'olya', age: 28, status: false},
+  //     {name: 'max', age: 30, status: true},
+  //     {name: 'anya', age: 31, status: false},
+  //     {name: 'oleg', age: 28, status: false},
+  //     {name: 'andrey', age: 29, status: true},
+  //     {name: 'masha', age: 30, status: true},
+  //     {name: 'olya', age: 31, status: false},
+  //     {name: 'max', age: 31, status: true}
+  // ];
+  // for (const user of users) {  //ітеруємо наш массив
+  //   let div = document.createElement('div'); // кожний еемент юзер пакуємо у div
+  //   div.classList.add('user'); // додаємо класс назва довільна
+  //   usersDiv.appendChild(div); // додаємо в наш блок usersDiv div який ми створили до цього.Таким чином створили усі блоки для user фле поки вони пусті
+  //   div.innerText = user.name; // додали до кожного блоку user.name ітрерований массивом також можна додати інші значення age status
+  // }
+
+//ще один приклад
+
+  // let users = [
+  //     {name: 'vasya', age: 31, status: false},
+  //     {name: 'petya', age: 30, status: true},
+  //     {name: 'kolya', age: 29, status: true},
+  //     {name: 'olya', age: 28, status: false},
+  //     {name: 'max', age: 30, status: true},
+  //     {name: 'anya', age: 31, status: false},
+  //     {name: 'oleg', age: 28, status: false},
+  //     {name: 'andrey', age: 29, status: true},
+  //     {name: 'masha', age: 30, status: true},
+  //     {name: 'olya', age: 31, status: false},
+  //     {name: 'max', age: 31, status: true}
+  // ];
+  //
+  // for (const user of users) {
+  //   let userInfo = document.createElement('div');//додали бллок
+  //   let h2 = document.createElement('h2'); // додали параграф
+  //   h2.innerText = user.name; // в h2  додали user.name з массиву
+  //   let p = document.createElement('p'); // додал параграф
+  //   p.innerText = user.status + ' ' + user.age // в параграф додали user.status + user.age
+  //
+  //   userInfo.appendChild(h2); // додали в наш userInfo те що ми створили в h2 and p
+  //   userInfo.appendChild(p);
+  //
+  //   document.body.appendChild(userInfo);
+
+  // }
+  //Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
+  //Завдання робити через цикли.
+
+  // let coursesAndDurationArray = [
+  //   {title: 'JavaScript Complex', monthDuration: 5},
+  //   {title: 'Java Complex', monthDuration: 6},
+  //   {title: 'Python Complex', monthDuration: 6},
+  //   {title: 'QA Complex', monthDuration: 4},
+  //   {title: 'FullStack', monthDuration: 7},
+  //   {title: 'Frontend', monthDuration: 4}
+  // ];
+  //
+  // for (const courses of coursesAndDurationArray) {
+  // let paragraph =  document.createElement('p');
+  // paragraph.innerText = `${courses.title} ${courses.monthDuration}`;
+  // document.body.appendChild(paragraph);
+
+
+  }
+
+
+
+
+
+
+
+  
+
+</script>
+</body>
+</html>
+
+
+
+

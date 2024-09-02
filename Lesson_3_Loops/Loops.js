@@ -1,8 +1,8 @@
 
 
-// for (let i = 0; i < 10; i++) {
-//     document.write(`<div>DIV</div>`)
-// }
+for (let i = 0; i < 10; i++) {
+    document.write(`<div>DIV</div>`)
+}
 // for (let i = 0; i < 10; i++) {
 //     document.write(`<div><p>Some-text</p>${i}</p></div>`)
 //
@@ -19,11 +19,11 @@
 //     i++;
 // }
 
-let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-for (const item of listOfItems){
-    document.write(`<ul> <li> ${item} </li> </ul>`);
-
-}
+// let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+// for (const item of listOfItems){
+//     document.write(`<ul> <li> ${item} </li> </ul>`);
+//
+// }
 
 // let products = [
 //     {

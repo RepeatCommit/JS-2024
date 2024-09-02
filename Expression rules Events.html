@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*div{*/
+        /*    height: 200px;*/
+        /*    width: 200px;*/
+        /*    background-color: darkcyan;*/
+        /*}*/
+
+       /* стилі для прдуктів*/
+       /* .products img{*/
+       /*     width: 200px;*/
+       /* }*/
+       /* .products button {*/
+       /*     display: block;*/
+       /*     width: 200px;*/
+       /* }*/
+
+    </style>
+</head>
+<body>
+<!--div з id goal-->
+<!--<div id="goal"></div>-->
+
+<!--<form id="f1">-->
+<!--    <input id="b1" name="username">-->
+<!--    <button>touch</button>-->
+<!--</form>-->
+
+
+<!--створюємо div для нашої корзини.будувати в середині будемо динамічно в скрипті-->
+<!--<div class="products">-->
+
+<!--</div>-->
+<script>
+    // let goal = document.getElementById('goal');
+    // goal.onclick = function (ev) { //в дужках ми зазначали ev тобто вона визначає як сталася ця подія onclick, це як ми визначили аргумент.
+    //     console.log('boom'); // при натисканні на наш дів виводить кожен раз boom
+    //     console.log(ev);
+    // };
+    //часто використовувана подія onmouse
+    //      goal.onmousemove = function (ev) { // також визначаємо аргумент ивент.Так нам показує клієнтську позицію тобто де ми рухали мишею
+    //     console.log('move'); // при тому як ми рухаємо наш div в консолі зчитуються ці рухи
+    //     console.log(ev);
+    //
+    //     // console.log(ev.clientX,ev.clientY); // бачимо координації руху
+    //
+    // }
+
+    // що б додавати нові події до існуючої події  треба вик.addEventListener.Перший аргумент це подія на чку вішаємл
+
+    // goal.addEventListener('click', function (ev) { // до події ми звертаємось onclick коли додаємо в Listener то без приставки on,так з усіма подіями on
+    // // другий параметр або аргумент ми визначаємо функцію в нашому випадку це знову ev тобто event
+    //  console.log('hello'); // так ми бачимо що виводиться 2 події
+    // });
+
+
+    // цу можна віднести до трекання куди юзер чкастіше наводить мишею на вашому сайті.Heat-map
+    // goal.onmouseover = function () {
+    //     console.log('wow'); // спрацьовує коли ми заводимо мишу в наш обьект тобто div
+    // };
+    //
+    // goal.onmouseleave = function () {
+    //     console.log('not bad'); //тепер при виведенні в консолі відображається not bad
+    // };
+
+   //для цього прикладу ми зробили інпут в боді і привʼязали подію goal до b1 oninput
+   //  let b1 = document.getElementById('b1');
+   //  b1.oninput = function () {  // за допомогою івентів в js ми можемо впливати на інші елементи як ми це і зробиьи в цьому прикладі
+   //     goal.innerText = this.value; //тепер коли ми щось пишемо в інпут то одразу дублюється в наш div ту саме
+   //  };
+
+    // далі ми додали в наш form який в body та використаємо forms api
+   // let f1 = document.forms.f1;
+   //
+   // //оброблюємо івент onsubmit
+   // f1.onsubmit = function (eve) {
+   //    eve.preventDefault(); //ця подія не дає перезагружати сторінку тобто не відправляй ничого просто стій.Даю вказівку.роби те що буде далі condole.log
+   //     console.log('soft');
+   //   let user1 =  {name:this.username.value}
+   //
+   //   console.log(user1);
+   //
+   // }
+
+    //local storage
+    // це область якак привʼязується до певного сайту.Localstorage  це сховище
+  //   localStorage.setItem('ff','twetwt'); // після цього ми заходимо в консоль application localstorage і наш сайт.Там знаходиться наші ключ і значення те що в дужках
+  // let some =   localStorage.getItem('ff');// так ми повертаємо наше значення twetwt ключем ff
+  //   console.log(some);
+  //   localStorage.clear(); // так ми можемо очистити наш local
+    // setitem це функція що б додати щосб в localstorage
+
+    //додаємо обʼєкт в local
+    // localStorage.setItem('user',JSON.stringify({name: 'Gora', id: 45})); //так додаєтьс обʼєкт в local без json передастся тільки ObjectObject
+   //  let userGiveJson = localStorage.getItem('user');
+   //  console.log(userGiveJson);// так ми дістали наш обʼєкт user але стрінгою
+   // let getUser = JSON.parse(userGiveJson); // перетворили
+   // console.log(getUser); // дістали наш обьект
+   // getUser.age = 56; // так ми додаємо поля значень інфо в наш обʼєкт
+   // console.log(getUser);
+   // let  stringy = JSON.stringify(getUser); // після внесених змін в наш обʼєкт знову пакуємо в json.string
+   //  localStorage.setItem('user',JSON.stringify(getUser)); // обʼєкт оновлено повертаємось localstorage application і бачимо що зміни внесені
+
+// взяли массив додаємо його в local
+//     let users = [
+//         {name: 'vasya', age: 31, status: false},
+//         {name: 'petya', age: 30, status: true},
+//         {name: 'kolya', age: 29, status: true},
+//         {name: 'olya', age: 28, status: false},
+//         {name: 'max', age: 30, status: true},
+//         {name: 'anya', age: 31, status: false},
+//         {name: 'oleg', age: 28, status: false},
+//         {name: 'andrey', age: 29, status: true},
+//         {name: 'masha', age: 30, status: true},
+//         {name: 'olya', age: 31, status: false},
+//         {name: 'max', age: 31, status: true}
+//     ];
+
+    // localStorage.setItem('users', JSON.stringify(users)); // додали массив в storage/можна закоментувати закрити і працювати далі з нашим массивом
+
+    // let takeUsers = localStorage.getItem('users');
+    // console.log(takeUsers); //знову дістали наш массив але стрінгою поки
+    // let user = JSON.parse(takeUsers); //ревретнули
+    // console.log(user); // дістали номральний массив
+    // users.push({}); //так ми можемо додати новий обьект в наш массив наприклад нового юхера з характеристиками
+    // console.log(users);
+    // localStorage.setItem('users', JSON.stringify(users)); // зберегли наш массив в storage і там зʼявився наш новий пустий обʼєкт
+
+    // реалізовуємо корзину по типу як інтернет магазині перед цим можна було б очистити наш localstorage
+
+    // let productsDiv = document.getElementsByClassName('products')[0]; // витягнули наш div products з body
+    //
+    // let products = [
+    //     {
+    //         title: 'milk',
+    //         price: 22,
+    //         image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+    //     },
+    //     {
+    //         title: 'juice',
+    //         price: 27,
+    //         image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+    //     },
+    //     {
+    //         title: 'tomato',
+    //         price: 47,
+    //         image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+    //     },
+    //     {
+    //         title: 'tea',
+    //         price: 15,
+    //         image: `https://e2.edimdoma.ru/data/ingredients/0000/1200/1200-ed4_wide.jpg?1515760357`
+    //     },
+    // ];
+    //
+    // for (const product of products) {
+    //
+    //     let prodBlock =  document.createElement('div'); //створюємо для кожного нащого продукта div
+    //
+    //     let h2 = document.createElement('h2'); // стоврили h2 для title та price
+    //     h2.innerText = `${product.title} ${product.price}`; //через innertext інтерпуляцією додали інформацію з нашого массиву продуктів
+    //
+    //     let img =  document.createElement('img');
+    //      img.src = product.image;// додали картинки до нащших прод
+    //
+    //      //тепер ми додали в prodBlock створені продукти з картинками h2 та img
+    //
+    //     let buttonElement  =  document.createElement('button'); //створюємо кнопку для доддавання в корзину
+    //      buttonElement.innerText = 'go to cart' //додали опис нашоїкнопки
+    //
+    //      buttonElement.onclick = function () { //створюємо функцію onclick що б при натисканні на кнопку товари зберігались в localstorage
+    //          let cart = JSON.parse(localStorage.getItem('cart')) || []; //тут ми роби мо перевірку.Якщо в середині тебе тобто localstorage немає cart то будь пуcтим массивом і якщо це так ми одразу Json parse туди в массив
+    //                                                                     //а я кщо ти там існуєш тобто якщо ми колись створювали та зберігади cart в local тоді json parse парсанемо
+    //          cart.push(product); // в cart ми пушаємо наші product бо вони протітеровані і створені вище
+    //          localStorage.setItem('cart',JSON.stringify(cart)) //додали в local наш новостоврений cart з нашими продуктами
+    //          //тепер при натисканні go to cart продукт дожається в local
+    //      };
+    //
+    //     prodBlock.append(h2,img,buttonElement);  //тепер ми додали в prodBlock створені продукти з картинками h2 та img
+    //
+    //
+    //
+    //     productsDiv.appendChild(prodBlock); //додаємо в productsDiv prodBlock.Створено divи для наших продуктів
+    //
+    // }
+
+
+
+
+
+</script>
+</body>
+</html>
