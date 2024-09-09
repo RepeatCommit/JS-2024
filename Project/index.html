@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Users List</h1>
+<div id="users-container"></div>
+
+<script>
+
+  fetch('https://jsonplaceholder.typicode.com/users')
+          .then(response => response.json())
+          .then(users => {
+            const usersContainer = document.getElementById('users-container');
+
+
+            for (const user of users) {
+              const userDiv = document.createElement('div');
+              userDiv.className = 'user-card';
+              userDiv.innerHTML = `<article>ID: ${user.id} Name: ${user.name}</article>`;
+
+
+              const button = document.createElement('button');
+              button.className =('btn');
+              button.textContent = "View Details";
+              button.onclick = function() {
+                window.location.href = `user-details.html?id=${user.id}`;
+              };
+
+              userDiv.appendChild(button);
+              usersContainer.appendChild(userDiv);
+            }
+          });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

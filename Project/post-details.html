@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="post-details"></div>
+<div id="comments-container"></div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+
+    // Отримуємо деталі поста та коментарі
+    async function GivePostDetails() {
+        const postResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+        const post = await postResponse.json();
+        const postDetailsDiv = document.getElementById('post-details');
+        postDetailsDiv.innerHTML = `
+               <li> Post ID: ${post.id}</li>
+               <li> Title: ${post.title}</li>
+               <li> Body: ${post.body}</li>
+            `;
+
+        const commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
+        const comments = await commentsResponse.json();
+        const commentsContainer = document.getElementById('comments-container');
+
+        for (const comment of comments) {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment-card';
+            commentDiv.innerHTML = `
+                   <li> Name: ${comment.name}</li>
+                    <li>Email: ${comment.email}</li>
+                    <li>Body: ${comment.body}</li>
+                `;
+            commentsContainer.appendChild(commentDiv);
+        }
+    }
+
+    GivePostDetails();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
